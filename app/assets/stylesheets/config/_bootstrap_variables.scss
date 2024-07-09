@@ -17,6 +17,8 @@ $success:    $green;
 $info:       $yellow;
 $danger:     $red;
 $warning:    $orange;
+$magic-mike: $mike-colour;
+
 
 // Buttons & inputs' radius
 $border-radius-sm:            .0625rem;
@@ -25,4 +27,10 @@ $border-radius-lg:            .25rem;
 $border-radius-xl:            .5rem;
 $border-radius-xxl:           1rem;
 
+// $border-radius: .5rem;
+
 // Override other variables below!
+@import "bootstrap/functions";
+@import "bootstrap/variables";
+
+$theme-colors: map-merge($theme-colors, ( "magic-mike": $magic-mike ));
