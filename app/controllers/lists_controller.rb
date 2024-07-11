@@ -8,6 +8,7 @@ class ListsController < ApplicationController
       movie = movies.sample
       @topMovies << movie unless @topMovies.include? movie
     end
+    # raise
   end
 
   def show
@@ -34,12 +35,12 @@ class ListsController < ApplicationController
     # raise
     @list = List.find(params[:id])
     @list.destroy
-    redirect_to lists_path(@list), status: :see_other
+    redirect_to lists_path("all"), status: :see_other
   end
 
   private
 
   def list_params
-    params.require(:list).permit(:name)
+    params.require(:list).permit(:name, :photo)
   end
 end
