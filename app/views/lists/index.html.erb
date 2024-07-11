@@ -16,7 +16,6 @@
   <div class="lists d-flex justify-content-between">
     <% @lists.each do |list| %>
       <div class="d-flex p-4 border rounded-5" style="background-image: url(<%= list.photo.attached? ? cl_image_path(list.photo.key) : image_path('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPQDYau3Hs4-xw1i8jVSUY4BlF4FLmg8lQqg&usqp=CAU') %>)">
-        <%= list.photo.key.class %>
         <h2><%= link_to "#{list.name}", list_path(list) %></h2>
         <%= link_to list_path(list), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
           <i class="fa-solid fa-trash"></i>
