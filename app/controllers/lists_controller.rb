@@ -35,7 +35,7 @@ class ListsController < ApplicationController
     # raise
     @list = List.find(params[:id])
     @list.destroy
-    redirect_to lists_path(@list), status: :see_other
+    redirect_to lists_path("all"), status: :see_other
   end
 
   private
