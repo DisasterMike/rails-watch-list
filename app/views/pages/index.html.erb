@@ -2,11 +2,11 @@
 <div class="banner page-banner d-flex align-items-center" style="height: 75vh">
   <div class="container">
     <div class="row">
-      <div class="col-6 p-3 d-flex justify-content-center">
+      <div class="col-xs-0 col-lg-6 p-3 d-flex justify-content-center">
         <%# render "core/movie_carousel" %>
-        <img src="<%= @topMovies[0].poster_url %>" class="w-50 h-100 rounded-4 shadow" alt="...">
+        <img src="<%= @topMovies[0].poster_url %>" class="w-50 h-100 rounded-4 shadow main-img" alt="...">
       </div>
-      <div class="col-6 p-3 d-flex align-items-center">
+      <div class="col-12 col-lg-6 p-3 d-flex align-items-center">
         <div>
           <h1 class="mb-3 banner-h1-m">Public created <span>movie</span> lists!</h1>
           <%= link_to "View Lists", lists_path, class: "btn btn-core btn-lg" %>

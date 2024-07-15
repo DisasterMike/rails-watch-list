@@ -12,7 +12,7 @@
           <% movies_row_count = 4 %>
           <% first_bunch = list.movies[0..movies_row_count] %>
           <% first_bunch.each do |movie| %>
-            <div class="col-3 d-flex justify-content-center">
+            <div class="col-6 col-md-6 col-lg-3 d-flex justify-content-center">
               <div>
                 <img class="border border-1 rounded-3 border-danger" src="<%= movie.poster_url %>" alt="" style="width: 200px; height: 300px">
                 <p><%= movie.title %></p>
@@ -20,7 +20,7 @@
             </div>
           <% end %>
           <% (movies_row_count - list.movies.count).times do %>
-            <div class="col-3 d-flex justify-content-center">
+            <div class="col-6 col-md-6 col-lg-3 d-flex justify-content-center">
               <div>
                 <div class="border border-1 rounded-3 border-danger d-flex flex-column align-items-center justify-content-center" style="width: 200px; height: 300px">
                   <%= link_to new_list_bookmark_path(list) do %>
