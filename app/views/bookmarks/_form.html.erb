@@ -1,5 +1,5 @@
 <%= simple_form_for [@list, @bookmark] do |f| %>
-  <%= f.association :movie %>
-  <%= f.input :comment %>
+  <%= f.association :movie, label: 'Select a movie', input_html: { class: 'border-danger' } %>
+  <%= f.input :comment, label: 'Provide a comment about the movie', placeholder: "One of the best movies I've ever seen.", input_html: { class: 'border-danger' } %>
   <%= f.submit 'Add Movie', class: "btn btn-core" %>
 <% end %>

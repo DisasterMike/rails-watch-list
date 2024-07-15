@@ -4,12 +4,14 @@
     <h1 class="mb-3 banner-h1-sm">Add a new <span>List!</span></h1>
   </div>
 </div>
-<div class="container-mid">
-  <%= simple_form_for @list do |f| %>
-    <%= f.input :name %>
-    <%= f.input :photo, as: :file %>
-    <%= f.submit %>
-  <% end %>
-  <%= link_to "Back", lists_path %>
+<div class="mid-container">
+  <div class="container p-3">
+    <%= simple_form_for @list, html: { class: "py-3"} do |f| %>
+      <%= f.input :name, label: 'Give your list a name', input_html: { class: 'border-danger' } %>
+      <%= f.input :photo, as: :file, label: 'Upload a photo', input_html: { class: 'border-danger' } %>
+      <%= f.submit 'Add List', class: "btn btn-core" %>
+    <% end %>
+    <%= link_to "Back", lists_path, class: "btn btn-primary my-3" %>
+  </div>
 </div>
-<div class="footer-banner"></div>
+<div class="footer-banner" style="height: 20vh;"></div>

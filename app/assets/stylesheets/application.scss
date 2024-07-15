@@ -14,11 +14,15 @@
 body{
   color: #a0a0a0;
   // background: linear-gradient(180deg, #2A064E, #2A064E, #120221);
-  background: linear-gradient(180deg, #2A064E, #120221);
+  background: linear-gradient(180deg, $bg-md, $bg-bt);
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
 
 .mid-container{
-  background: linear-gradient(180deg, #2A064E, #120221);
+  background: linear-gradient(180deg, $bg-md, $bg-bt);
+}
+
+.hover-link:hover{
+  color: $danger !important;
 }

@@ -21,6 +21,8 @@ $danger:     $red;
 $warning:    $orange;
 $magic-mike: $mike-colour;
 $core: $dark-red;
+$bg-md: $bg-mid;
+$bg-bt: $bg-bottom;
 
 
 // Buttons & inputs' radius
@@ -38,3 +40,5 @@ $border-radius-xxl:           1rem;
 
 $theme-colors: map-merge($theme-colors, ( "magic-mike": $magic-mike ));
 $theme-colors: map-merge($theme-colors, ( "core": $core ));
+$theme-colors: map-merge($theme-colors, ( "bg-md": $bg-md ));
+$theme-colors: map-merge($theme-colors, ( "bg-bt": $bg-bt ));

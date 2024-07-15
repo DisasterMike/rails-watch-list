@@ -1,7 +1,18 @@
-<%= render "core/navbar" %>
-<h1><%= @list.name %></h1>
-<%= link_to "Add a movie", new_list_bookmark_path(@list) %>
-<h2>Movies</h2>
+<%= render "core/navbar_generic" %>
+<div class="banner page-banner d-flex align-items-center" style="height: 30vh; background-image: url('<%= @list.photo.attached? ? cl_image_path(@list.photo.key) : image_path('filmsetback2.jpg') %>')">
+  <div class="container">
+    <div class="row">
+      <div class="col-6 p-3 d-flex align-items-center">
+        <div>
+          <h1 class="mb-3 banner-h1-m"><%= @list.name %></h1>
+          <%= link_to "Add a movie", new_list_bookmark_path(@list), class: "btn btn-core btn-sm" %>
+        </div>
+      </div>
+      <div class="col-6 p-3">
+      </div>
+    </div>
+  </div>
+</div>
 <p><%= @movieList %></p>
 <% @list.bookmarks.each do |bookmark| %>
   <div class="d-flex gap-3 border border-3 align-items-center">
@@ -22,4 +33,4 @@
     </div>
   </div>
 <% end %>
-<%= link_to "Back to main page", lists_path("all") %>
+<%= link_to "Back to Lists page", lists_path, class: "btn btn-primary my-3" %>

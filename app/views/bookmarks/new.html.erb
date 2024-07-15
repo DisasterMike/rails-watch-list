@@ -13,5 +13,10 @@
     </div>
   </div>
 </div>
-<%= render "form" %>
-<%= link_to "Back to List", list_path(@list) %>
+<div class="mid-container">
+  <div class="container">
+    <%= render "form" %>
+    <%= link_to "Back", list_path(@list), class: "btn btn-primary my-3" %>
+  </div>
+</div>
+<div class="footer-banner" style="height: 20vh"></div>
