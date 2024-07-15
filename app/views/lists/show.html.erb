@@ -13,24 +13,14 @@
     </div>
   </div>
 </div>
-<p><%= @movieList %></p>
-<% @list.bookmarks.each do |bookmark| %>
-  <div class="d-flex gap-3 border border-3 align-items-center">
-    <img src="<%= bookmark.movie.poster_url %>" alt="" style="height: 150px;">
-    <div>
-      <p><strong><%= bookmark.movie.title %></strong></p>
-      <div class="stars d-flex">
-        <p><%= "⭐"*(bookmark.movie.rating.to_i) %></p>
-        <% no_stars = 10 - bookmark.movie.rating.to_i %>
-        <% no_stars.times do %>
-          <p><i class="fa-solid fa-star"></i></p>
-        <% end %>
-      </div>
-      <p><%= bookmark.comment %></p>
-      <%= link_to bookmark_path(bookmark), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
-        <p><i class="fa-solid fa-trash"></i></p>
-      <% end %>
-    </div>
+<div class="mid-container">
+  <div class="container p-3">
+    <% if @list.bookmarks.any? %>
+      <%= render "movies" %>
+    <% else %>
+      <h2 style="padding: 50px 0 113px 0;">You don't have any movies yet.</h2>
+    <% end %>
+    <%= link_to "Back", lists_path, class: "btn btn-primary my-3" %>
   </div>
-<% end %>
-<%= link_to "Back to Lists page", lists_path, class: "btn btn-primary my-3" %>
+</div>
+<div class="footer-banner" style="height: 20vh;"></div>

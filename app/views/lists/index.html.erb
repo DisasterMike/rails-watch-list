@@ -4,7 +4,7 @@
     <div class="row">
       <div class="col-6 p-3 d-flex align-items-center">
         <div>
-          <h1 class="mb-3 banner-h1-m">Saved <span>Lists</span>!</h1>
+          <h1 class="mb-3 banner-h1-m"><span>Lists</span> created by <span>you</span>!</h1>
           <%= link_to "Add a Movie list", new_list_path, class: "btn btn-core btn-sm" %>
         </div>
       </div>
@@ -14,17 +14,16 @@
   </div>
 </div>
 <div class="mid-container">
-  <div class="container p-3"  style="height: 500px">
-    <div class="lists d-flex justify-content-between">
-      <% @lists.each do |list| %>
-        <div class="d-flex p-4 border rounded-5" style="background-image: url(<%= list.photo.attached? ? cl_image_path(list.photo.key) : image_path('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPQDYau3Hs4-xw1i8jVSUY4BlF4FLmg8lQqg&usqp=CAU') %>)">
-          <h2><%= link_to "#{list.name}", list_path(list), class: "text-light hover-link" %></h2>
-          <%= link_to list_path(list), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
-            <i class="fa-solid fa-trash"></i>
-          <% end %>
+  <div class="container">
+    <div class="lists-container py-3">
+      <% if @lists.any? %>
+        <%= render "list_items" %>
+      <% else %>
+        <div style="height: 20vh">
+          <h2>You don't have any lists yet.</h2>
         </div>
       <% end %>
     </div>
   </div>
 </div>
-<div class="footer-banner"></div>
+<div class="footer-banner" style="height: 15vh"></div>

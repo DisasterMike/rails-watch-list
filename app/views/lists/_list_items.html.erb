@@ -1,0 +1,40 @@
+<% @lists.each do |list| %>
+  <div class="list-item p-3">
+    <div class="list-title my-3 d-flex align-items-center gap-3">
+      <h2><%= link_to "#{list.name}", list_path(list), class: "text-light hover-link text-decoration-none fw-bold" %></h2>
+      <%= link_to list_path(list), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
+        <i class="fa-solid fa-trash text-danger" style="font-size: 1.5rem"></i>
+      <% end %>
+    </div>
+    <div class="list-movies">
+      <div class="row">
+        <% if list.movies.any? %>
+          <% movies_row_count = 4 %>
+          <% first_bunch = list.movies[0..movies_row_count] %>
+          <% first_bunch.each do |movie| %>
+            <div class="col-3 d-flex justify-content-center">
+              <div>
+                <img class="border border-1 rounded-3 border-danger" src="<%= movie.poster_url %>" alt="" style="width: 200px; height: 300px">
+                <p><%= movie.title %></p>
+              </div>
+            </div>
+          <% end %>
+          <% (movies_row_count - list.movies.count).times do %>
+            <div class="col-3 d-flex justify-content-center">
+              <div>
+                <div class="border border-1 rounded-3 border-danger d-flex flex-column align-items-center justify-content-center" style="width: 200px; height: 300px">
+                  <%= link_to new_list_bookmark_path(list) do %>
+                    <i class="fa-solid fa-plus text-light" style="font-size: 4rem;"></i>
+                  <% end %>
+                  <h4><%= link_to "Add a movie!", new_list_bookmark_path(list), class: "text-light text-decoration-none" %></h4>
+                </div>
+              </div>
+            </div>
+          <% end %>
+        <% else %>
+          <p>No movies added to this list yet.</p>
+        <% end %>
+      </div>
+    </div>
+  </div>
+<% end %>
