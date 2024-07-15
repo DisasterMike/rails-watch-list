@@ -1,4 +1,17 @@
-<h1><%= @list.name %></h1>
-<h2>Add a new Movie</h2>
+<%= render "core/navbar_generic" %>
+<div class="banner page-banner d-flex align-items-center" style="height: 30vh;">
+  <div class="container">
+    <div class="row">
+      <div class="col-6 p-3 d-flex align-items-center">
+        <div>
+          <h1 class="banner-h1-sm"><%= @list.name %></h1>
+          <h2>Add a new Movie</h2>
+        </div>
+      </div>
+      <div class="col-6 p-3">
+      </div>
+    </div>
+  </div>
+</div>
 <%= render "form" %>
 <%= link_to "Back to List", list_path(@list) %>

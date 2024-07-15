@@ -1,32 +1,31 @@
-<%= render "navbar" %>
-<div class="banner p-3 d-flex align-items-center">
+<%= render "core/navbar_generic" %>
+<div class="banner page-banner d-flex align-items-center" style="height: 50vh">
   <div class="container">
     <div class="row">
-      <div class="col-6 p-3">
-        <%= render "movie_carousel" %>
-      </div>
       <div class="col-6 p-3 d-flex align-items-center">
         <div>
-          <h1>Save any <span>movies!</span></h1>
-          <%= link_to "Add a Movie list", new_list_path, class: "btn btn-core rounded-5" %>
+          <h1 class="mb-3 banner-h1-m">Saved <span>Lists</span>!</h1>
+          <%= link_to "Add a Movie list", new_list_path, class: "btn btn-core btn-sm" %>
         </div>
+      </div>
+      <div class="col-6 p-3">
       </div>
     </div>
   </div>
 </div>
-<div class="container p-3">
-  <%= link_to "Create a List", new_list_path %>
-  <div class="lists d-flex justify-content-between">
-    <% @lists.each do |list| %>
-      <div class="d-flex p-4 border rounded-5" style="background-image: url(<%= list.photo.attached? ? cl_image_path(list.photo.key) : image_path('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPQDYau3Hs4-xw1i8jVSUY4BlF4FLmg8lQqg&usqp=CAU') %>)">
-        <h2><%= link_to "#{list.name}", list_path(list) %></h2>
-        <%= link_to list_path(list), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
-          <i class="fa-solid fa-trash"></i>
-        <% end %>
-      </div>
-      <%# cl_image_tag("#{list.photo.key}") %>
-      <%# cl_image_tag("o7bz8mnk2y3yw8f152z830y36ag8") %>
-    <% end %>
+<div class="mid-container">
+  <div class="container p-3"  style="height: 500px">
+    <%= link_to "Create a List", new_list_path %>
+    <div class="lists d-flex justify-content-between">
+      <% @lists.each do |list| %>
+        <div class="d-flex p-4 border rounded-5" style="background-image: url(<%= list.photo.attached? ? cl_image_path(list.photo.key) : image_path('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPQDYau3Hs4-xw1i8jVSUY4BlF4FLmg8lQqg&usqp=CAU') %>)">
+          <h2><%= link_to "#{list.name}", list_path(list) %></h2>
+          <%= link_to list_path(list), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
+            <i class="fa-solid fa-trash"></i>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
   </div>
-  <%# cl_image_tag("BQ_Wallpaper_1_wgw1jw") %>
 </div>
+<div class="footer-banner"></div>

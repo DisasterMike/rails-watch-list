@@ -1,0 +1,19 @@
+<div class="slide-show-reel">
+  <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel" data-bs-pause="{hover: false}">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <div class ="d-flex justify-content-center">
+          <img src="<%= @topMovies[0].poster_url %>" class="w-50 h-100" alt="..."">
+        </div>
+      </div>
+      <% @topMovies.each_with_index do |movie, index| %>
+        <% next if index == 0 %>
+        <div class="carousel-item">
+          <div class ="d-flex justify-content-center">
+            <img src="<%= @topMovies[index].poster_url %>" class="d-block w-50" alt="..." style="height: 100%">
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
