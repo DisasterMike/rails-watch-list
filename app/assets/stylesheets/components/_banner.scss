@@ -5,13 +5,35 @@
       rgba(0, 0, 0, 0),
       rgba(0, 0, 0, 0.6));
 
+  // h1{
+  //   position: absolute;
+  //   top: 50%;
+  //   left: 180px;
+  //   font-size: 4rem;
+  //   color: white;
+  //   text-align: center;
+  //   text-shadow: 1px 1px 10px black;
+  // }
+}
+
+.banner{
+  height: 55vh;
+  background-position: center;
+  background-size: cover;
+
+  background-image: url(filmsetback2.jpg); /* W3C */
+  box-shadow: inset 0px -20px 20px 0px #2A064E;
+
   h1{
-    position: absolute;
-    top: 50%;
-    left: 180px;
-    font-size: 4rem;
+    font-size: 5rem;
     color: white;
-    text-align: center;
-    text-shadow: 1px 1px 10px black;
   }
+
+  span{
+    font-weight: bold;
+  }
+
+  // .row{
+  //   height: 100%;
+  // }
 }

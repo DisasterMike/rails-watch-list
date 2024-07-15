@@ -7,7 +7,8 @@
 // General style
 $font-family-sans-serif: $body-font;
 $headings-font-family:   $headers-font;
-$body-bg:                $light-gray;
+$body-bg:                #2A064E;
+// $body-color:             white;
 $font-size-base:         1rem;
 
 // Colors
@@ -18,6 +19,7 @@ $info:       $yellow;
 $danger:     $red;
 $warning:    $orange;
 $magic-mike: $mike-colour;
+$core: $dark-red;
 
 
 // Buttons & inputs' radius
@@ -34,3 +36,4 @@ $border-radius-xxl:           1rem;
 @import "bootstrap/variables";
 
 $theme-colors: map-merge($theme-colors, ( "magic-mike": $magic-mike ));
+$theme-colors: map-merge($theme-colors, ( "core": $core ));
