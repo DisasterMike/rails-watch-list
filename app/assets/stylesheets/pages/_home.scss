@@ -17,6 +17,61 @@ body{
   color: $danger !important;
 }
 
+.arrow{
+  transform: rotate(-90deg);
+  transition: 0.3s;
+}
+.arrow-down{
+  transform: rotate(0);
+  transition: 0.3s;
+}
+.arrow-right{ // make sure this is below the arrow-down selector
+  transform: rotate(-90deg);
+  transition: 0.3s;
+}
+
+.image-invisible{
+  height: 0px;
+  // transition: 1s;
+}
+.image-visible{ // make sure this is below the invisible selector
+  height: 300px;
+  // transition: 1s;
+}
+
+.image-transition{
+  transition: height 0.5s;
+}
+
+.size-shrink{
+  animation-name: my-animation;
+  animation-duration: 1s;
+  animation-direction: normal;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in-out;
+}
+.size-grow{
+  animation-name: my-animation;
+  animation-duration: 1s;
+  animation-direction: reverse;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in-out;
+}
+@keyframes my-animation {
+  from {
+    // background-color: #ff7a59;
+    height: 300px;
+    // top: 10px;
+  }
+  to {
+    // background-color: #33475b;
+    height: 0px;
+    // top: 100px;
+  }
+}
+
 @media (max-width: 990px){
   .main-img{
     display: none;
